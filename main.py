@@ -11,7 +11,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, )
 @app.get("/health_check")
 async def health_check():
     return {'status': 'work!'}

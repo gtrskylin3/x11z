@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     PORT: int
     RELOAD: bool
     HOST: str
+    EMAIL: str
+    API_URL: str
 
 class DatabaseSettings(BaseSettings):
     model_config = SettingsConfigDict(
