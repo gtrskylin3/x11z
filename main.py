@@ -4,8 +4,8 @@ import uvicorn
 from config import settings
 from contextlib import asynccontextmanager
 from database.session import create_db
-from api.routers.words_api import router as words_api_router
-from api.routers.words_web import router as words_web_router
+from api.routers.words import router as words_api_router
+from web.routers.words import router as words_web_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
