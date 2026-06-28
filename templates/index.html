@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Boost</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>dictionary😎</h1>
+        
+        <!-- Список слов -->
+        <ul>
+            {% for word in words %}
+                <li>
+                    <div class="word-info">
+                        <span class="word-main">{{word.word}}</span>
+                        <span class="word-translate">{{word.translate}}</span>
+                        {% if word.context %}
+                            <span class="word-context">Context: {{word.context}}</span>
+                        {% endif %}
+                    </div>
+                    <div>
+                         <form action="/delete" method="post" style="display: inline;">
+                            <input type="hidden" name="id" value="{{ word.id }}">
+                            <button type="submit" class="btn-delete" title="Delete">❌</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Форма добавления -->
+        <div class="form-section">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <div class="input-field">
+                        <label encoding="utf-8" for="word">Word</label>
+                        <input type="text" id="word" name="word" required autocomplete="off">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="translate">Translation</label>
+                        <input type="text" id="translate" name="translate" autocomplete="off">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="context">Context</label>
+                        <input type="text" id="context" name="context" autocomplete="off">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Add new word</button>
+            </form>
+        </div>
+
+        <!-- Экспорт -->
+        <div>
+            <form action="/export-anki" method="post">
+                <button type="submit" class="btn-secondary">Export dict to Anki (.apkg file)</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 from config import settings
 from contextlib import asynccontextmanager
@@ -11,8 +12,10 @@ async def lifespan(app: FastAPI):
     await create_db()
     yield
 
-
 app = FastAPI(lifespan=lifespan, )
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
 @app.get("/health_check")
 async def health_check():
     return {'status': 'work!'}

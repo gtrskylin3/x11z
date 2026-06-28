@@ -18,7 +18,7 @@ class WordsRepository:
     async def get_all(session: AsyncSession) -> list[Words]:
         stmt = select(Words).order_by(Words.id)
         result = await session.execute(stmt)
-        return result.scalars().all()
+        return list(result.scalars().all())
     @staticmethod
     async def remove(session: AsyncSession, word_id: int) -> bool:
         word = await session.get(Words, word_id)

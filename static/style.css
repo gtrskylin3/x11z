@@ -1,0 +1,169 @@
+   /* Базовые настройки в стиле ChatGPT */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #212121; /* Основной темный фон */
+            color: #ececec; /* Светлый текст */
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Контейнер для центрирования контента */
+        .container {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        /* Список слов */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        li {
+            background-color: #2f2f2f; /* Чуть более светлый серый для блоков */
+            border: 1px solid #424242;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: background-color 0.2s;
+        }
+
+        li:hover {
+            background-color: #353535;
+        }
+
+        .word-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .word-main {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .word-translate {
+            font-size: 1rem;
+            color: #b4b4b4;
+            font-weight: 400;
+        }
+
+        .word-context {
+            font-size: 0.85rem;
+            color: #8e8e8e;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Кнопки и формы */
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-delete {
+            background: none;
+            font-size: 1.1rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            opacity: 0.6;
+        }
+
+        .btn-delete:hover {
+            opacity: 1;
+            background-color: rgba(239, 68, 68, 0.1); /* Легкий красный фон при наведении */
+        }
+
+        .form-section {
+            background-color: #2f2f2f;
+            border: 1px solid #424242;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 0.85rem;
+            color: #b4b4b4;
+            font-weight: 500;
+        }
+
+        input[type="text"] {
+            background-color: #212121;
+            border: 1px solid #424242;
+            border-radius: 8px;
+            color: #ffffff;
+            padding: 12px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #10a37f; /* Фирменный зеленый цвет ChatGPT для фокуса */
+        }
+
+        .btn-primary {
+            background-color: #10a37f; /* Зеленый ChatGPT */
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a7f64;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #424242;
+            color: #ececec;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background-color: #353535;
+            border-color: #b4b4b4;
+        }
